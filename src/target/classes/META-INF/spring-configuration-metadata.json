@@ -1,0 +1,36 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "cn.gin.passport.module.config.DataSourceConfig",
+      "name": "spring.datasource",
+      "type": "cn.gin.passport.module.config.DataSourceConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "cn.gin.passport.module.config.DataSourceConfig",
+      "name": "spring.datasource.driver-class-name",
+      "description": "Full classname of Database driver class",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cn.gin.passport.module.config.DataSourceConfig",
+      "name": "spring.datasource.password",
+      "description": "Database password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cn.gin.passport.module.config.DataSourceConfig",
+      "name": "spring.datasource.url",
+      "description": "JDBC Connection URL",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cn.gin.passport.module.config.DataSourceConfig",
+      "name": "spring.datasource.username",
+      "description": "Database username",
+      "type": "java.lang.String"
+    }
+  ]
+}

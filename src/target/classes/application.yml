@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///passport
+    username: root
+    password: 111
+server:
+  port: 8200
+security:
+  oauth2:
+#    authorization:
+#      check-token-access: permitAll()
+#      token-key-access: permitAll()
+    client:
+      client-id: jtodo
+      client-secret: jtodo
