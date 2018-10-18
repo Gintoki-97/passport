@@ -38,6 +38,9 @@ li {
   clear: both;
   content: '';
 }
+.none {
+  display: none;
+}
 .font-size-base {
   font-size: 14px;
 }
@@ -109,4 +112,108 @@ body {
   vertical-align: middle;
   color: #999;
   font-size: 12px;
+}
+.content .center {
+  margin: 10px 0 20px;
+  position: relative;
+  height: 475px;
+  z-index: 5;
+}
+.content .center .signin-box {
+  margin: 0 auto;
+  width: 990px;
+}
+.content .center .signin-box .form-box {
+  position: relative;
+  top: 40px;
+  width: 346px;
+  float: right;
+  background: #fff;
+  overflow: visible;
+  z-index: 4;
+}
+.content .center .signin-box .form-box .tips-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  background: #fff8f0;
+}
+.content .center .signin-box .form-box .tips-wrapper .tips .iconfont {
+  position: relative;
+  top: 2px;
+}
+.content .center .signin-box .form-box .tips-wrapper .tips .text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  color: #999;
+}
+.content .center .signin-box .form-box .tabs {
+  width: 100%;
+}
+.content .center .signin-box .form-box .tabs .tab {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 54px;
+  font-size: 15px;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #f4f4f4;
+}
+.content .center .signin-box .form-box .tabs .tab a {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 99%;
+  height: 18px;
+  border-right: 1px solid #f4f4f4;
+}
+.content .center .signin-box .form-box .signin .wrapper {
+  padding: 20px;
+}
+.content .center .signin-box .form-box .signin .wrapper .err-msg .text {
+  height: 24px;
+  font-size: 13px;
+  color: #f00;
+  overflow: hidden;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-item {
+  margin-bottom: 20px;
+  position: relative;
+  width: 306px;
+  height: 38px;
+  border: 1px solid #bdbdbd;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-item .iconfont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  border-right: 1px solid #bdbdbd;
+  z-index: 3;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-item .input {
+  padding: 18px 30px 18px 50px;
+  display: block;
+  width: 100%;
+  height: 18px;
+  line-height: 18px;
+  float: none;
+  border: 0;
+  font-size: 14px;
+  overflow: hidden;
+  outline: none;
+}
+.content .center .banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 475px;
+  background: #f00;
 }
