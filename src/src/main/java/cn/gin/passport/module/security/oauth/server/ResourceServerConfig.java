@@ -22,15 +22,15 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
 
         http.formLogin()
-                .loginPage("/auth/required")
-                .loginProcessingUrl("/auth/form")
+                .loginPage("/user/signin")
+                .loginProcessingUrl("/user/signin")
                 .successHandler(authenticationSuccessHandler)
                 .failureHandler(authenticationFailureHandler);
 
         http.authorizeRequests()
-                .antMatchers("/auth/*").permitAll()
+                .antMatchers("/", "/user", "/user/signin", "/auth/*", "/static/**").permitAll()
                 .anyRequest().authenticated()
-                .and()
-                .csrf().disable();
+            .and()
+            .csrf().disable();
     }
 }

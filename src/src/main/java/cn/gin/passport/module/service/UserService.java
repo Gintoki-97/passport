@@ -1,5 +1,6 @@
 package cn.gin.passport.module.service;
 
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +14,10 @@ public class UserService {
      */
     public static boolean isAuthenticated() {
 
-        return SecurityContextHolder.getContext().getAuthentication().isAuthenticated();
+        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        return (authentication.isAuthenticated()) &&
+                !(authentication instanceof AnonymousAuthenticationToken);
     }
 
     /**
@@ -26,7 +30,8 @@ public class UserService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserDetails userDetails = null;
 
-        if (authentication.isAuthenticated()) {
+        if (authentication.isAuthenticated() &&
+                !(authentication instanceof AnonymousAuthenticationToken)) {
 
             try {
                 userDetails = (UserDetails) authentication.getPrincipal();

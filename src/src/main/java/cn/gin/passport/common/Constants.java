@@ -2,6 +2,17 @@ package cn.gin.passport.common;
 
 public class Constants {
 
+    public static final class Mark {
+
+        public static final String EMPTY = "";
+        public static final String SLASH = "/";
+        public static final String BACKSLASH = "\\";
+        public static final String DOT = ".";
+        public static final String SPACING = " ";
+        public static final String ZERO = "0";
+        public static final String COLON = ":";
+    }
+
     public static class Setting {
 
         public static final String DATASOURCE_DRIVER = "org.sqlite.JDBC";
@@ -10,7 +21,11 @@ public class Constants {
 
     public static class Path {
 
-        public static final String CTRL_SITE_HELLO = "/hello";
-        public static final String CTRL_USER_SIGNUP = "/signup";
+        public static final String WILDCARD = "/*";
+
+        public static final String CTRL_USER = "/user";
+        public static final String CTRL_USER_SIGNIN = "/signin";
+
+        public static final String VIEW_SIGNIN = "signin";
     }
 }

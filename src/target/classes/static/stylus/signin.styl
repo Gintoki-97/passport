@@ -20,8 +20,7 @@ body {
 
     position relative
     margin 10px 0
-    position relative
-    width 300px
+    width 320px
     height 100px
     float left
 
@@ -50,6 +49,8 @@ body {
 }
 
 .content {
+
+  margin-bottom 30px
 
   .tip {
 
@@ -151,14 +152,15 @@ body {
 
           .wrapper {
 
-            padding 20px
+            padding 0 20px 20px 20px
 
             .err-msg {
               
               .text {
-                height 24px
+                height 30px
+                line-height 30px
                 font-size 13px
-                color color-red
+                color color-error
                 overflow hidden
               }
             }
@@ -198,6 +200,92 @@ body {
                   outline none
                 }
               }
+
+              .form-component {
+                
+                margin-bottom 20px
+                position relative
+                width 306px
+                height 38px
+                color color-gray-large
+
+                .checkbox-wrapper {
+
+                  display inline-block
+
+                  .icon-squarecheck {
+                    position relative
+                    z-index 99
+                  }
+
+                  .checkbox {
+                    position absolute
+                    top 5px
+                    left 0px
+                    width 16px
+                    z-index 199
+                    opacity 0
+                  }
+                }
+
+                .forgot-pass {
+
+                  display inline-block
+                  position absolute
+                  right 0
+                  height 24px
+                  line-height 24px
+                  color color-gray-large
+
+                  &:hover {
+                    text-decoration underline 
+                  }
+                }
+
+                .form-button {
+
+                  display block
+                  width 100%
+                  height 38px
+                  line-height 38px
+                  border 0
+                  font-size 16px
+                  overflow hidden
+                  outline none
+                  color color-white
+                  background color-gray-large
+                  letter-spacing .9px
+                  cursor pointer
+
+                  &:hover {
+                    background color-gray-lv3
+                  }
+                }
+              }
+            }
+ 
+            .oauth {
+
+              .items {
+
+                display flex
+                justify-content space-around
+
+                .item {
+
+                  display block
+                  cursor pointer
+
+                  .iconfont {
+
+                    font-size 24px
+
+                    &:hover {
+                      font-size 28px
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -205,11 +293,30 @@ body {
     }
 
     .banner {
+
       position absolute
       top 0
       left 0
       width 100%
       height 475px
+      
+
+      .main {
+        margin-left 10%
+        width 60%
+        height 100%
+        background url('../image/site/passport.banner.jpg') no-repeat center
+      }
     }
+  }
+}
+
+.footer {
+
+  .copyright {
+    margin 10px 0
+    height 24px
+    line-height 24px
+    text-align center
   }
 }

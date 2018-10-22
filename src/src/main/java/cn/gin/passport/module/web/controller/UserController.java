@@ -1,19 +1,48 @@
 package cn.gin.passport.module.web.controller;
 
+import cn.gin.passport.common.Constants;
 import cn.gin.passport.common.util.JsonObject;
+import cn.gin.passport.common.util.Requests;
 import cn.gin.passport.module.service.UserService;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/user")
+@Controller
+@RequestMapping(Constants.Path.CTRL_USER)
 public class UserController {
 
-    //// REST interface
+    //// View Request
 
-    @GetMapping({"", "/"})
+    @GetMapping(Constants.Path.CTRL_USER_SIGNIN)
+    public String signinViewRequest() {
+
+        if (UserService.isAuthenticated()) {
+
+            return Requests.redirect(Constants.Path.CTRL_USER);
+        }
+
+        return Constants.Path.VIEW_SIGNIN;
+    }
+
+    //// Handler Request
+
+    @PostMapping(Constants.Path.CTRL_USER_SIGNIN)
+    public String signinHandler() {
+
+        if (UserService.isAuthenticated()) {
+
+            return Requests.redirect(Constants.Path.CTRL_USER);
+        }
+
+        return Constants.Path.VIEW_SIGNIN;
+    }
+
+
+    //// REST Interface
+
+    @GetMapping({Constants.Mark.EMPTY, Constants.Mark.SLASH})
+    @ResponseBody
     public String currentUser() {
 
         UserDetails currentUser = UserService.getCurrentUser();

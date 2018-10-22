@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Signin</title>
+  <link rel="stylesheet" href="../static/font/iconfont/iconfont.css">
+  <link rel="stylesheet" href="../static/font/sns/iconfont.css">
+  <link rel="stylesheet" href="../static/stylus/signin.css">
+</head>
+<body>
+  <div class="header clear">
+    <div class="logo">
+      <a href="javascript:;">
+        <img src="../static/image/logo.gin.100x100.png" alt="Gintoki" class="img">
+      </a>
+      <div class="sign">Gintoki-97 Signin</div>
+    </div>
+    <div class="links">
+      <a href="" class="link-common help">
+        <i class="iconfont icon-creative"></i> 登录页面，问题反馈</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="tip">
+      <div class="wrapper">
+        <i class="iconfont icon-notice"></i>
+        <p class="text">
+          依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版 <a href="javascript:;" class="black" 
+          target="_blank">《用户隐私协议》</a>已上线，将更有利于保护您的个人隐私。
+        </p>
+      </div>
+    </div>
+    <div class="center">
+      <div class="signin-box">
+        <div class="form-box">
+          <div class="tips-wrapper">
+            <div class="tips">
+              <i class="iconfont icon-notice"></i>
+              <p class="text">警惕所有未知的转账汇款通知，谨防网络诈骗。</p>
+            </div>
+          </div>
+          <div class="tabs clear">
+            <div class="tab">
+              <a href="javascript:;" class="link-common">扫码登录</a>
+            </div>
+            <div class="tab">
+                <a href="javascript:;" class="link-common">账户登录</a>
+            </div>
+          </div>
+          <div class="signin username-password">
+            <div class="wrapper">
+              <div class="err-msg">
+                <p class="text"></p>
+              </div>
+              <div class="form">
+                <form action="">
+                  <div class="form-item">
+                    <i class="iconfont icon-people"></i>
+                    <input type="text" class="input">
+                  </div>
+                  <div class="form-item">
+                    <i class="iconfont icon-lock"></i>
+                    <input type="password" class="input">
+                  </div>
+                  <div class="form-component">
+                    <div class="checkbox-wrapper">
+                      <i class="iconfont icon-squarecheck"></i>
+                      <input type="checkbox" class="checkbox">
+                      <span class="text">Remember Me</span>
+                    </div>
+                    <a href="javascript:;" class="forgot-pass link-common">Forgot Password</a>
+                  </div>
+                  <div class="form-component">
+                    <button class="form-button">Signin</button>
+                  </div>
+                </form>
+              </div>
+              <div class="oauth">
+                <ul class="items">
+                  <li class="item qq" title="QQ">
+                    <i class="iconfont icon-qq2"></i>
+                  </li>
+                  <li class="item wechat" title="WeChat">
+                    <i class="iconfont icon-wechat2"></i>
+                  </li>
+                  <li class="item weibo" title="Sina">
+                      <i class="iconfont icon-weibo"></i>
+                    </li>
+                  <li class="item github" title="Github">
+                    <i class="iconfont icon-github3"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="signin qrcode none"></div>
+        </div>
+      </div>
+      <div class="banner">
+        <div class="main blur"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="copyright">Copyright © 2018 <a href="http://wandan.site" class="link-common">wandan.site</a> ICP备案：
+      <a href="http://www.miitbeian.gov.cn/" target="_blank" class="link-common">豫ICP备18036005号</a>
+    </p>
+  </div>
+</body>
+</html>

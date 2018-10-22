@@ -2,12 +2,44 @@
   "hints": [],
   "groups": [
     {
+      "sourceType": "cn.gin.passport.module.config.ApplicationProperties",
+      "name": "application",
+      "type": "cn.gin.passport.module.config.ApplicationProperties"
+    },
+    {
+      "sourceType": "cn.gin.passport.module.config.ApplicationProperties",
+      "name": "application.info",
+      "sourceMethod": "getInfo()",
+      "type": "cn.gin.passport.module.config.ApplicationProperties$InfoProperties"
+    },
+    {
       "sourceType": "cn.gin.passport.module.config.DataSourceConfig",
       "name": "spring.datasource",
       "type": "cn.gin.passport.module.config.DataSourceConfig"
     }
   ],
   "properties": [
+    {
+      "sourceType": "cn.gin.passport.module.config.ApplicationProperties",
+      "defaultValue": "127.0.0.1",
+      "name": "application.host",
+      "description": "Server host",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cn.gin.passport.module.config.ApplicationProperties",
+      "defaultValue": "8000",
+      "name": "application.port",
+      "description": "Server port",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "cn.gin.passport.module.config.ApplicationProperties",
+      "defaultValue": "http",
+      "name": "application.protocol",
+      "description": "The protocol current server used, default is HTTP",
+      "type": "java.lang.String"
+    },
     {
       "sourceType": "cn.gin.passport.module.config.DataSourceConfig",
       "name": "spring.datasource.driver-class-name",

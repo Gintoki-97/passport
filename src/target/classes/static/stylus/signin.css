@@ -16,6 +16,13 @@ ul,
 li {
   list-style: none;
 }
+.blur {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+  filter: blur(1.5px);
+}
 .link-common {
   color: initial;
   text-decoration: none;
@@ -74,8 +81,7 @@ body {
 .header .logo {
   position: relative;
   margin: 10px 0;
-  position: relative;
-  width: 300px;
+  width: 320px;
   height: 100px;
   float: left;
 }
@@ -95,6 +101,9 @@ body {
   line-height: 45px;
   color: #666;
   font-size: 12px;
+}
+.content {
+  margin-bottom: 30px;
 }
 .content .tip {
   padding-top: 10px;
@@ -171,12 +180,13 @@ body {
   border-right: 1px solid #f4f4f4;
 }
 .content .center .signin-box .form-box .signin .wrapper {
-  padding: 20px;
+  padding: 0 20px 20px 20px;
 }
 .content .center .signin-box .form-box .signin .wrapper .err-msg .text {
-  height: 24px;
+  height: 30px;
+  line-height: 30px;
   font-size: 13px;
-  color: #f00;
+  color: #a50000;
   overflow: hidden;
 }
 .content .center .signin-box .form-box .signin .wrapper .form .form-item {
@@ -209,10 +219,86 @@ body {
   overflow: hidden;
   outline: none;
 }
+.content .center .signin-box .form-box .signin .wrapper .form .form-component {
+  margin-bottom: 20px;
+  position: relative;
+  width: 306px;
+  height: 38px;
+  color: #4f4e4e;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-component .checkbox-wrapper {
+  display: inline-block;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-component .checkbox-wrapper .icon-squarecheck {
+  position: relative;
+  z-index: 99;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-component .checkbox-wrapper .checkbox {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 16px;
+  z-index: 199;
+  opacity: 0;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-component .forgot-pass {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  height: 24px;
+  line-height: 24px;
+  color: #4f4e4e;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-component .forgot-pass:hover {
+  text-decoration: underline;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-component .form-button {
+  display: block;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  border: 0;
+  font-size: 16px;
+  overflow: hidden;
+  outline: none;
+  color: #fff;
+  background: #4f4e4e;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+}
+.content .center .signin-box .form-box .signin .wrapper .form .form-component .form-button:hover {
+  background: #333;
+}
+.content .center .signin-box .form-box .signin .wrapper .oauth .items {
+  display: flex;
+  justify-content: space-around;
+}
+.content .center .signin-box .form-box .signin .wrapper .oauth .items .item {
+  display: block;
+  cursor: pointer;
+}
+.content .center .signin-box .form-box .signin .wrapper .oauth .items .item .iconfont {
+  font-size: 24px;
+}
+.content .center .signin-box .form-box .signin .wrapper .oauth .items .item .iconfont:hover {
+  font-size: 28px;
+}
 .content .center .banner {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 475px;
+}
+.content .center .banner .main {
+  margin-left: 10%;
+  width: 60%;
+  height: 100%;
+  background: url("../image/site/passport.banner.jpg") no-repeat center;
+}
+.footer .copyright {
+  margin: 10px 0;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
 }
