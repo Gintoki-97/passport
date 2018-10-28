@@ -2,6 +2,16 @@ package cn.gin.passport.common;
 
 public class Constants {
 
+    public static class Http {
+
+        public static final String APPLICATION_JSON = "application/json;charset=UTF-8";
+    }
+
+    public static class System {
+
+        public static final String DEFAULT_CHARSET = "UTF-8";
+    }
+
     public static final class Mark {
 
         public static final String EMPTY = "";

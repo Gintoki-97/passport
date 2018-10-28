@@ -1,11 +1,38 @@
 package cn.gin.passport.module.service;
 
+import cn.gin.passport.module.dao.UserDao;
+import cn.gin.passport.module.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
+
+    @Autowired
+    private UserDao userDao;
+
+    // Service Method
+
+    public User save(User user) {
+
+        return userDao.save(user);
+    }
+
+    public User get(Integer id) {
+
+        return userDao.getById(id);
+    }
+
+    public User loadByAccount(String account) {
+
+        return userDao.getByAccount(account);
+    }
+
+    //// Private Method
 
     /**
      * Return whether current user is authenticated

@@ -11,15 +11,17 @@ spring:
     cache: false
   jmx:
     enabled: false
-  devtools:
-    restart:
-      additional-paths: src/main/java
-      exclude: static/**, public/**
+  jpa:
+    database: MYSQL
 security:
   oauth2:
     client:
       client-id: jtodo
       client-secret: jtodo
+logging:
+  level:
+    org:
+      springframework: INFO
 application:
   info:
     name: passport

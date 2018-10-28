@@ -1,5 +1,6 @@
 package cn.gin.passport.module.security.authentication;
 
+import cn.gin.passport.common.Constants;
 import cn.gin.passport.common.util.JsonObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -23,16 +24,13 @@ public class AuthenticationFailureHandler extends SimpleUrlAuthenticationFailure
      */
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Autowired
-    private ObjectMapper objectMapper;
-
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
         logger.info("Authentication Failure");
 
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        response.setContentType("application/json;charset=UTF-8");
+        response.setContentType(Constants.Http.APPLICATION_JSON);
         response.getWriter().write(JsonObject.no(exception.getMessage()));
     }
 }

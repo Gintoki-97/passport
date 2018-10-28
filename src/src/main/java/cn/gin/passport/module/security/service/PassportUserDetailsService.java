@@ -1,5 +1,7 @@
 package cn.gin.passport.module.security.service;
 
+import cn.gin.passport.module.entity.User;
+import cn.gin.passport.module.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,20 +24,28 @@ public class PassportUserDetailsService implements UserDetailsService, SocialUse
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        logger.info("Form login username = {}", username);
+        logger.info("Accept the form login request by username: {}", username);
+        User user = userService.loadByAccount(username);
 
-        return buildUser(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("Cannot found corresponding user by the username: " + username);
+        }
+
+        return user;
     }
 
     @Override
     public SocialUserDetails loadUserByUserId(String userId) throws UsernameNotFoundException {
 
-        logger.info("OAuth login user ID = {}", userId);
+        logger.info("Accept the OAuth2 login request by user ID:", userId);
 
         return buildUser(userId);
     }

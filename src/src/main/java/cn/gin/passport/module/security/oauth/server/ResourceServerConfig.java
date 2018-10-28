@@ -28,9 +28,10 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .failureHandler(authenticationFailureHandler);
 
         http.authorizeRequests()
-                .antMatchers("/", "/user", "/user/signin", "/auth/*", "/static/**").permitAll()
+                .antMatchers(
+                        "/", "/user", "/user/signin", "/auth/*","/static/**").permitAll()
                 .anyRequest().authenticated()
-            .and()
-            .csrf().disable();
+                .and()
+                .csrf().disable();
     }
 }
