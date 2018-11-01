@@ -3,11 +3,15 @@ passport/.idea
 *.iml
 out
 gen### Java template
-# Eclipse
+
+# Eclipse project files
+passport/.apt_generated/
+passport/.apt_generated_tests/
 passport/.settings
 .classpath
 .factorypath
 .project
+
 # Compiled class file
 *.class
 
