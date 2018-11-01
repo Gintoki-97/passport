@@ -1,5 +1,5 @@
 # IntelliJ project files
-src/.idea
+passport/.idea
 *.iml
 out
 gen### Java template
@@ -26,12 +26,9 @@ gen### Java template
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-<<<<<<< HEAD
 
-src/.idea
-=======
 ### Maven template
-target/
+passport/target
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -43,5 +40,3 @@ buildNumber.properties
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
-
->>>>>>> 5ada76aa2fe8eb900ee2657239d0df3f5a202c65
