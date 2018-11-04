@@ -14,7 +14,7 @@ import cn.gin.passport.module.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 
-    //// View Request
+    // ~ View Request
 
     @GetMapping("/signin")
     public String signinViewRequest() {
@@ -26,11 +26,11 @@ public class UserController {
         return "signin";
     }
 
-    // Handler Request
+    // ~ Handler Request
 
 
 
-    //// Rest Interface
+    // ~ Rest Interface
 
     @GetMapping("/me")
     @ResponseBody

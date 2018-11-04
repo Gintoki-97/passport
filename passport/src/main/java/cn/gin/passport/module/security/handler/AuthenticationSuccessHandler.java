@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.gin.passport.common.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,9 +93,10 @@ public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticatio
             OAuth2Authentication oauth2Authentication = new OAuth2Authentication(oauth2Request, authentication);
             final OAuth2AccessToken accessToken = tokenServices.createAccessToken(oauth2Authentication);
 
-            CookieUtils.setCookie(response, "TOKEN", accessToken.getValue(), "/", CookieUtils.DEFAULT_EXPIRY);
+            CookieUtils.setCookie(response, Constants.Cookie.ACCESS_TOKEN, accessToken.getValue(), "/",
+                    CookieUtils.DEFAULT_EXPIRY);
 
-            response.setContentType("application/json;charset=utf-8");
+            response.setContentType(Constants.CONTENT_TYPE_JSON);
             response.getWriter().write(objectMapper.writeValueAsString(accessToken));
         }
         catch (AuthenticationException failed) {

@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.gin.passport.common.Constants;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
@@ -29,7 +30,7 @@ public class PassportAuthenticationEntryPoint extends OAuth2AuthenticationEntryP
         if (cause != null && cause instanceof InvalidTokenException) {
             json.setCode(1);
             json.setMsg("Invalid token: " + cause.getMessage());
-            response.setContentType("application/json;charset=utf-8");
+            response.setContentType(Constants.CONTENT_TYPE_JSON);
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
             response.getWriter().write(json.toJson());
         }

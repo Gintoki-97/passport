@@ -2,6 +2,7 @@ package cn.gin.passport.common.util;
 
 import javax.servlet.http.HttpServletRequest;
 
+import cn.gin.passport.common.Constants;
 import com.google.common.net.HttpHeaders;
 
 /**
@@ -34,26 +35,20 @@ public class Requests {
     public static String redirect(String... urls) {
 
         if (urls == null || urls.length == 0) {
-            return "/";
+            return "redirect:/";
         }
 
         StringBuilder builder = new StringBuilder("redirect:");
 
         for (String url : urls) {
 
-            final int len = url.length();
+            String u = url == null ? Constants.Mark.EMPTY : url.trim();
 
-            if (len > 0) {
-                url = url.trim();
+            final int len = u.length();
+            final int start = (url.charAt(0) == '/' && len > 1) ? 1 : 0;
+            final int end = (url.charAt(len - 1) == '/' && len > 1) ? len - 1 : len;
 
-                if (url.charAt(0) == '/' && len > 1)
-                    url = url.substring(1);
-
-                if (url.charAt(len - 1) == '/' && len > 1)
-                    url = url.substring(0, len - 2);
-
-                builder.append(String.format("/%s", url));
-            }
+            builder.append(String.format("/%s", u.substring(start, end)));
         }
 
         return builder.toString();

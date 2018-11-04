@@ -58,5 +58,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
         configurer.tokenExtractor(tokenExtractor)
                   .authenticationEntryPoint(authenticationEntryPoint);
+
     }
 }

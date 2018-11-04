@@ -1,52 +1,129 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Sign In</title>
-    <link rel="stylesheet" type="text/css" href="/css/signin.css">
+  <meta charset="UTF-8">
+  <title>Signin</title>
+  <link rel="stylesheet" href="/static/font/iconfont/iconfont.css">
+  <link rel="stylesheet" href="/static/font/sns/iconfont.css">
+  <link rel="stylesheet" href="/static/stylus/signin.css">
 </head>
 <body>
-    <form class="form signin-form" action="/user/signin" method="post">
-        <h3 class="form-header">
-            帐号登录
-            <a href="javascript:void(0);" class="signin-qrcode">扫码登录</a>
-        </h3>
-        <div class="form-body">
-            <div class="form-item">
-	            <input type="text" class="input" name="username" placeholder="Username">
-	        </div>
-	        <div class="form-item">
-	            <input type="password" class="input" name="password" placeholder="Password">
-	        </div>
-	        <div class="form-item">
-	            <input type="submit" value="Signin" class="btn submit">
-	        </div>
+  <div class="header clear">
+    <div class="logo">
+      <a href="javascript:;">
+        <img src="/static/image/logo.gin.100x100.png" alt="Gintoki" class="img">
+      </a>
+      <div class="sign">Gintoki-97 Signin</div>
+    </div>
+    <div class="links">
+      <a href="" class="link-common help">
+        <i class="iconfont icon-creative"></i> 登录页面，问题反馈</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="tip">
+      <div class="wrapper">
+        <i class="iconfont icon-notice"></i>
+        <p class="text">
+          依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版 <a href="javascript:;" class="black"
+                                                     target="_blank">《用户隐私协议》</a>已上线，将更有利于保护您的个人隐私。
+        </p>
+      </div>
+    </div>
+    <div class="center">
+      <div class="signin-box">
+        <div class="form-box">
+          <div class="tips-wrapper">
+            <div class="tips">
+              <i class="iconfont icon-notice"></i>
+              <p class="text">警惕所有未知的转账汇款通知，谨防网络诈骗。</p>
+            </div>
+          </div>
+          <div class="tabs clear">
+            <div class="tab">
+              <a href="javascript:;" class="link-common">扫码登录</a>
+            </div>
+            <div class="tab">
+              <a href="javascript:;" class="link-common">账户登录</a>
+            </div>
+          </div>
+          <div class="signin username-password">
+            <div class="wrapper">
+              <div id="err-msg" class="err-msg">
+                <p class="text"></p>
+              </div>
+              <div class="form">
+                <form id="signin-form" class="signin-form">
+                  <div class="form-item">
+                    <i class="iconfont icon-people"></i>
+                    <input type="text" class="input" name="username" placeholder="Username" data-verify="si-ac" data-rules="required">
+                  </div>
+                  <div class="form-item">
+                    <i class="iconfont icon-lock"></i>
+                    <input type="password" class="input" name="password"placeholder="Password" data-verify="si-pa" data-rules="required">
+                  </div>
+                  <div class="form-component">
+                    <div class="checkbox-wrapper remember-me">
+                      <i class="iconfont icon-squarecheck widget" data-checked="true"></i>
+                      <input type="checkbox" class="checkbox" checked="checked">
+                      <span class="text">Remember Me</span>
+                    </div>
+                    <a href="javascript:;" class="forgot-pass link-common">Forgot Password</a>
+                  </div>
+                  <div class="form-component">
+                    <button class="form-button btn submit">Signin</button>
+                  </div>
+                </form>
+              </div>
+              <div class="oauth">
+                <ul class="items">
+                  <li class="item qq" title="QQ">
+                    <i class="iconfont icon-qq2"></i>
+                  </li>
+                  <li class="item wechat" title="WeChat">
+                    <i class="iconfont icon-wechat2"></i>
+                  </li>
+                  <li class="item weibo" title="Sina">
+                    <i class="iconfont icon-weibo"></i>
+                  </li>
+                  <li class="item github" title="Github">
+                    <i class="iconfont icon-github3"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="signin qrcode none"></div>
         </div>
-        <div class="form-footer">
-	        <div class="third-parts">
-	            <h4>第三方账号登录</h4>
-	            <ul class="clear">
-	                <li class="third-part github">
-	                    <a class="link-common" href="/user/oauth/github">Github</a>
-	                </li>
-	                <li class="third-part wechat">
-	                    <a class="link-common" href="/user/oauth/wechat">WeChat</a>
-	                </li>
-	                <li class="third-part wechat">
-                        <a class="link-common" href="/user/oauth/qq">QQ</a>
-                    </li>
-                    <li class="third-part wechat">
-                        <a class="link-common" href="/user/oauth/sina">Sina</a>
-                    </li>
-                    <li class="third-part csdn">
-                        <a class="link-common" href="/user/oauth/csdn">CSDN</a>
-                    </li>
-	            </ul>
-	        </div>
+      </div>
+      <div class="banner">
+        <div class="main">
+          <div class="editor">
+            <dl>
+              <dd class="title">Authentication Central Control Server</dd>
+              <dt>
+                <ul class="items">
+                  <li class="item">Used the Spring Security 4.x as the underlying support for the security framework</li>
+                  <li class="item">SSO server based on token authentication</li>
+                  <li class="item">Support for third-party OAuth2 signin, such as Github, WeChat, Sina, QQ</li>
+                  <li class="item">Use the JWT token as the user's identity token</li>
+                  <li class="item">...</li>
+                </ul>
+              </dt>
+            </dl>
+          </div>
         </div>
-    </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="copyright">Copyright © 2018 <a href="http://wandan.site" class="link-common">wandan.site</a> ICP备案：
+      <a href="http://www.miitbeian.gov.cn/" target="_blank" class="link-common">豫ICP备18036005号</a>
+    </p>
+  </div>
 
-    <script type="text/javascript" src="/js/lib/base64.js"></script>
-    <script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/js/signin.js"></script>
+  <script type="text/javascript" src="/js/lib/base64.js"></script>
+  <script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/js/signin.js"></script>
 </body>
 </html>

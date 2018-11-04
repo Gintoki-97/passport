@@ -108,7 +108,10 @@ public class User extends org.springframework.security.core.userdetails.User {
 
     public void setUsername(String username) {
         this.username = username;
-        this.account = username;
+
+        if (username != null && this.account == null) {
+            setAccount(username);
+        }
     }
 
     public Integer getId() {
@@ -124,7 +127,12 @@ public class User extends org.springframework.security.core.userdetails.User {
     }
 
     public void setAccount(String account) {
+
         this.account = account;
+
+        if (account != null && this.username == null) {
+            setUsername(account);
+        }
     }
 
     @Override

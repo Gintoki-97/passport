@@ -29,9 +29,9 @@ public class JsonObject {
      * the value of field {@code code} depends on the field {@code success}.
      *
      * <pre>
-     *     success true     code 1
-     *     success false    code 0
-     * </pre>
+     *     success true     code 0
+     *     success false    code
+     * </pre>1
      *
      * @param success Whether the request is success
      * @param msg The tips message to front end
@@ -39,7 +39,7 @@ public class JsonObject {
     public JsonObject(boolean success, String msg) {
         this.success = success;
         this.msg = msg;
-        this.code = success ? 1 : 0;
+        this.code = success ? 0 : 1;
     }
 
     public boolean isSuccess() {
@@ -112,6 +112,25 @@ public class JsonObject {
     public static String ok(String msg) {
 
         return new JsonObject(true, msg).toJson();
+    }
+
+    /**
+     * Create a Json string used the given field {@code msg} and {@code data}, the field {@code success}
+     * will always be true.
+     *
+     * @param msg The tips message to front end
+     * @param data The data need to send to front end
+     * @return A Json string with success status
+     */
+    public static String ok(String msg, Map<String, Object> data) {
+
+        JsonObject json = new JsonObject(true, msg);
+        if (data == null) {
+            data = Maps.newHashMapWithExpectedSize(0);
+        }
+        json.setData(data);
+
+        return json.toJson();
     }
 
     /**

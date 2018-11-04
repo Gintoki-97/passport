@@ -1,5 +1,6 @@
 # IntelliJ project files
 passport/.idea
+passport/transaction-logs
 *.iml
 out
 gen### Java template

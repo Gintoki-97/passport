@@ -3,6 +3,7 @@ package cn.gin.passport.module.security.oauth.server.token;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
+import cn.gin.passport.common.Constants;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
@@ -58,7 +59,7 @@ public class PassportBearerTokenExtractor extends BearerTokenExtractor {
         if (request.getCookies() == null) return null;
 
         for (Cookie cookie : request.getCookies()) {
-            if (StringUtils.equals("TOKEN", cookie.getName())) {
+            if (StringUtils.equals(Constants.Cookie.ACCESS_TOKEN, cookie.getName())) {
                 String value = cookie.getValue();
                 if (!StringUtils.isBlank(value)) {
                     request.setAttribute(OAuth2AuthenticationDetails.ACCESS_TOKEN_TYPE, value);
